@@ -5,6 +5,9 @@ using TMPro;
 
 public class Gate : MonoBehaviour
 {
+    public GameObject canvas;
+    LevelManager levelManager;
+
     public int bonusIncreaseRate = 1;
     public float bonusMulitplyRate = 1f;
     public float currentSpeed = 1;
@@ -22,6 +25,7 @@ public class Gate : MonoBehaviour
     int nameIndex = 0;
     private void Start()
     {
+        levelManager = canvas.GetComponent<LevelManager>();
         if (gateType == 0)
             _name.text = speedNames[nameIndex];
         else
@@ -59,6 +63,7 @@ public class Gate : MonoBehaviour
         else if (other.CompareTag("Player"))
         {
             Destroy(other.gameObject);
+            levelManager.FinishLevel(currentSpeed, currentDamage);
         }
             
 

@@ -51,10 +51,24 @@ public class PlayerMovement : MonoBehaviour
             obstacleCollisionDetected = false;
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+         if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            horizontalInput = touch.position.x / Screen.width * 2 - 1;
+        }
+        else if (Input.GetMouseButton(0))  // Mouse input
+        {
+            // Simulate touch by using mouse position
+            horizontalInput = (Input.mousePosition.x / Screen.width) * 2 - 1;  // Range -1 to 1 based on horizontal mouse position
+        }
+        else
+        {
+            // Handle keyboard input
+            horizontalInput = Input.GetAxis("Horizontal");  // -1 to 1 based on arrow keys or A/D
+        }
 
       //  if (transform.position.y < -5)
       //      Die();
