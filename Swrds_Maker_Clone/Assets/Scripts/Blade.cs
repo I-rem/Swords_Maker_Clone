@@ -22,8 +22,12 @@ public class Blade : MonoBehaviour
         {
             //Physics.IgnoreCollision(myCollider, other);
                 if (gameObject.CompareTag("Blade"))
+                {
                     Destroy(gameObject);
-                swordManager.AddBlade(myTransform.position); 
+                    swordManager.AddBlade(myTransform.position); 
+                }
         }
+        if (other.CompareTag("Obstacle") && gameObject.CompareTag("SwordBlade"))
+            Destroy(this.gameObject);
     }
 }

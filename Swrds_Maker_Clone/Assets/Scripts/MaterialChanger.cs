@@ -7,10 +7,11 @@ public class MaterialChanger : MonoBehaviour
     [SerializeField] private Material[] materials;
 
     private Renderer objectRenderer;
-    public int currentMaterialIndex = 0;
+    public int currentMaterialIndex;
 
     private void Start()
     {
+        currentMaterialIndex = 0;
         objectRenderer = GetComponent<Renderer>();
 
         if (materials.Length > 0)
@@ -23,7 +24,8 @@ public class MaterialChanger : MonoBehaviour
     {
         if (other.CompareTag("Gate1"))
         {
-            ChangeMaterial(1);
+            if (currentMaterialIndex == 0)
+                ChangeMaterial(1);
         }
         else if (other.CompareTag("Gate2"))
         {
