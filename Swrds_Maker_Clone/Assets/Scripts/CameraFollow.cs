@@ -16,10 +16,17 @@ public class CameraFollow : MonoBehaviour
     // LateUpdate is called after all Update functions have been called
     void LateUpdate()
     {
-        // Calculate the target position including player's position on X and Z axes
-        Vector3 targetpos = new Vector3(player.position.x + offset.x, transform.position.y, player.position.z + offset.z);
+        if (player)
+        {
+            Vector3 targetpos = new Vector3(player.position.x + offset.x, transform.position.y, player.position.z + offset.z);
 
-        // Set the camera's position to the target position
-        transform.position = targetpos;
+            transform.position = targetpos;
+        }
+        else
+        {
+            Vector3 targetpos = new Vector3(0, transform.position.y, transform.position.z);
+
+            transform.position = targetpos;
+        }
     }
 }

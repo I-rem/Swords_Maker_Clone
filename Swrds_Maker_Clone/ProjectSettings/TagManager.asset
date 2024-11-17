@@ -10,6 +10,7 @@ TagManager:
   - Gate2
   - Gate3
   - Gate4
+  - Obstacle
   layers:
   - Default
   - TransparentFX

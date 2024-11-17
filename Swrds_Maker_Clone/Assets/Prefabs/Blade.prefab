@@ -130,3 +130,4 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 0e92d533b6379ea45a9c9838e6f1ef99, type: 2}
   - {fileID: 2100000, guid: 8a592510b794ce0428114fc4750f7325, type: 2}
   - {fileID: 2100000, guid: 2205f10bf3b09f54fb0275b0c78d2594, type: 2}
+  currentMaterialIndex: 0
