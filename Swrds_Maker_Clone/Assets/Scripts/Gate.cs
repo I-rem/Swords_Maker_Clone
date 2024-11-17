@@ -5,44 +5,48 @@ using TMPro;
 
 public class Gate : MonoBehaviour
 {
-    public float maxBonus = 5f;
-    public float bonusIncreaseRate = 0.1f;
-    public int gateType; // 0: FireRate 1: FireRange
-    private string[] gates = { "FireRate", "FireRange" };
-    public float currentBonus = 0f;
+    public float bonusIncreaseRate = 1f;
+    public float bonusMulitplyRate = 1f;
+    public float currentSpeed = 1;
+    public float currentDamage = 0;
+    public int gateType; // 0: Speed 1: Damage
+    private string[] gates = { "Speed", "Damage" };
+
+    HandleBonus handleBonus;
+            
 
     public TextMeshPro textMeshPro;
 
     private void Start()
     {
-        if (currentBonus < 0)
-            textMeshPro.text = $"<color=red>{gates[gateType]}" + $" <color=red>\n{currentBonus}</color>";
+        if (gateType == 1)
+            textMeshPro.text = $"<color=red>{gates[gateType]}" + $" <color=red>\n{currentSpeed}</color>";
         else
-            textMeshPro.text = $"<color=green>{gates[gateType]}" + $"<color=green>\n{currentBonus}</color>";
+            textMeshPro.text = $"<color=green>{gates[gateType]}" + $"<color=green>\n{currentDamage}</color>";
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet") && currentBonus < maxBonus)
+        if (other.CompareTag("SwordBblade"))
         {
-            currentBonus += bonusIncreaseRate;
-            if (currentBonus > maxBonus)
-                currentBonus = maxBonus;
+            handleBonus = other.GetComponent<HandleBonus>();
+            if (gateType == 0)
+            {
+                handleBonus.ApplyBonus(bonusMulitplyRate, gateType);
+                currentSpeed += currentSpeed*bonusMulitplyRate;
+            }
+            else
+            {
+                handleBonus.ApplyBonus(bonusIncreaseRate, gateType);
+                currentDamage += bonusIncreaseRate;
+            }
+            
         }
         else if (other.CompareTag("Player"))
         {
-            PlayerShooting playerShooting = other.GetComponent<PlayerShooting>();
-            playerShooting.ApplyBonus(currentBonus, gateType);
+            Destroy(other.gameObject);
         }
             
 
-    }
-
-    void Update()
-    {
-         if (currentBonus < 0)
-            textMeshPro.text = $"<color=red>{gates[gateType]}" + $" <color=red>\n{currentBonus}</color>";
-        else
-            textMeshPro.text = $"<color=green>{gates[gateType]}" + $"<color=green>\n{currentBonus}</color>";
     }
 }
