@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1413894598295153454}
   - component: {fileID: 4922683834781203999}
   - component: {fileID: 7865540541144250861}
+  - component: {fileID: 6282900396235955362}
   m_Layer: 0
   m_Name: Blade
   m_TagString: SwordBlade
@@ -111,3 +112,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sword: {fileID: 1719357260355158638, guid: d7cbeadc26aa5c840a80b6473af88ed5, type: 3}
+--- !u!114 &6282900396235955362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760116979228528796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99f17c04bbdbc140a76fc257a7e63f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 6ca6067404a065a41a68ba43e370a2de, type: 2}
+  - {fileID: 2100000, guid: da51e13482b9d9f4caa548150395ed24, type: 2}
+  - {fileID: 2100000, guid: 0e92d533b6379ea45a9c9838e6f1ef99, type: 2}
+  - {fileID: 2100000, guid: 8a592510b794ce0428114fc4750f7325, type: 2}
+  - {fileID: 2100000, guid: 2205f10bf3b09f54fb0275b0c78d2594, type: 2}

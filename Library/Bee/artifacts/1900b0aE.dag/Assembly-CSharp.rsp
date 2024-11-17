@@ -350,6 +350,7 @@
 "Assets/Scripts/CameraFollow.cs"
 "Assets/Scripts/Ground/GroundSpawner.cs"
 "Assets/Scripts/Ground/GroundTile.cs"
+"Assets/Scripts/MaterialChanger.cs"
 "Assets/Scripts/Menu/AudioManager.cs"
 "Assets/Scripts/Menu/AudioSlider.cs"
 "Assets/Scripts/Menu/FadeOutScript.cs"

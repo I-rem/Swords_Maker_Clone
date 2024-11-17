@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Blade
+  - SwordBlade
+  - Gate1
+  - Gate2
+  - Gate3
+  - Gate4
   layers:
   - Default
   - TransparentFX
