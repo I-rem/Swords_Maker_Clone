@@ -379,7 +379,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -421,7 +421,7 @@ RectTransform:
   - {fileID: 1105124578}
   - {fileID: 674990525}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -482,6 +482,7 @@ MonoBehaviour:
   money: 0
   time: 2
   image: {fileID: 71149839}
+  player: {fileID: 1434342774}
 --- !u!1001 &74688466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1048,7 +1049,7 @@ Transform:
   - {fileID: 808772711}
   - {fileID: 702581696}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &601932112
 PrefabInstance:
@@ -1839,7 +1840,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1660993202 stripped
 Transform:
@@ -2115,7 +2116,7 @@ PrefabInstance:
     - target: {fileID: 373886679453582546, guid: ce1e3f39b3ef2284985e330a6322bdd8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 373886679453582546, guid: ce1e3f39b3ef2284985e330a6322bdd8,
         type: 3}
@@ -2258,7 +2259,7 @@ PrefabInstance:
     - target: {fileID: 1719357260355158639, guid: d7cbeadc26aa5c840a80b6473af88ed5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1719357260355158639, guid: d7cbeadc26aa5c840a80b6473af88ed5,
         type: 3}

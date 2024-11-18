@@ -13,8 +13,22 @@ public class LevelManager : MonoBehaviour
 
     public Image image;
 
-    public void FinishLevel(float speed, float damage)
+    HandleBonus handleBonus;
+    public GameObject player;
+
+    float damage;
+    float speed;
+
+    private void Start()
     {
+        handleBonus = player.GetComponent<HandleBonus>();
+    }
+
+    public void FinishLevel()
+    {
+        damage = handleBonus.damage;
+        speed = handleBonus.speed;
+
         if (damage * speed * 10 < bossHealth)
             Restart();
         else

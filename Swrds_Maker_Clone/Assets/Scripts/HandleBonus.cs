@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class HandleBonus : MonoBehaviour
 {
-    float speed;
+    public float speed;
     
     private void Start()
     {
@@ -18,7 +18,7 @@ public class HandleBonus : MonoBehaviour
     {
         if (type == 0)
         {
-            speed += speed * bonus;
+            speed += (speed * bonus);
         }
         else if (type == 1)
         {

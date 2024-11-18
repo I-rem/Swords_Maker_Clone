@@ -45,7 +45,7 @@ public class Gate : MonoBehaviour
             if (other && gateType == 0 && other.GetComponent<MaterialChanger>().currentMaterialIndex == 4)
             {
                 handleBonus.ApplyBonus(bonusMulitplyRate, gateType);
-                currentSpeed += currentSpeed*bonusMulitplyRate;
+                currentSpeed += (currentSpeed*bonusMulitplyRate);
                 textMeshPro.text = $"<color=blue>{gates[gateType]}" + $" <color=blue>\n{currentSpeed}</color>";
                 nameIndex++;
                 _name.text = speedNames[nameIndex];
@@ -63,7 +63,7 @@ public class Gate : MonoBehaviour
         else if (other.CompareTag("Player"))
         {
             Destroy(other.gameObject);
-            levelManager.FinishLevel(currentSpeed, currentDamage);
+            levelManager.FinishLevel();
         }
             
 
